@@ -46,13 +46,6 @@ int main(int argc, char **argv) {
   } else {
     for (int source = 1; source < size; source++) {
       MPI_Recv(&(dist[0][0]), NUMBER_OF_NODES*NUMBER_OF_NODES, MPI_INT, source, 1, MPI_COMM_WORLD, &status);
-      /*for (int i = 0; i < NUMBER_OF_NODES; i++) {
-        for (int j = 0; j < NUMBER_OF_NODES; j++) {
-          if (dist[i][j] < dist[i][j]) {
-            dist[i][j] = dist[i][j];
-          }
-        }
-      }*/
     }
 
     double time_to = MPI_Wtime();
@@ -62,7 +55,6 @@ int main(int argc, char **argv) {
     #ifndef WRITE_DISTANCES_TO_FILE
       printf("Elapsed time: %.6f seconds.\n", lapsed_time);
     #endif
-    //free(root_dist);
   }
 
   free(dist);
