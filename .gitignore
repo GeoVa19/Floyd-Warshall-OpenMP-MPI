@@ -1,0 +1,11 @@
+libgraph/lib/*.a
+libgraph/obj/*.o
+
+mpi/*.o
+mpi/mpi_1
+mpi/mpi_2
+mpi/mpi_3
+
+omp/*.o
+omp/parallel
+omp/serial
